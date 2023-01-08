@@ -40,9 +40,7 @@ function include(file, path="/assets/php/",element="content" ) {
 }
 
 function test() {
-  let y = document.getElementsByClassName("dot");
-  y = y.length -1
-  for (let x = y; x > 0; x--) {
+  for (let x = 0; x < 5; x++) {
     // Generate a random number between 0.5 and 1.5
     var delay = Math.random() + 0.5;
     // Wait for the specified amount of time
