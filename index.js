@@ -41,14 +41,12 @@ function include(file, path="/assets/php/",element="content" ) {
 
 function loaded() {
 
-
-
-
   let interval;
   let elapsedTime = 0;
   let startTime;
   let isRunning = false;
-
+  let dots = document.querySelectorAll('.dot');
+  
   function startStopwatch() {
     if (!isRunning) {
       startTime = Date.now();
@@ -56,24 +54,24 @@ function loaded() {
       isRunning = true;
     }
   }
-
+  
   function stopStopwatch() {
     clearInterval(interval);
     isRunning = false;
   }
-
+  
   function resetStopwatch() {
     stopStopwatch();
     elapsedTime = 0;
     updateStopwatchDisplay();
   }
-
+  
   function updateStopwatch() {
     elapsedTime += (Date.now() - startTime) / 1000;
-    // updateStopwatchDisplay();
+    updateStopwatchDisplay();
     startTime = Date.now();
   }
-
+  
   function updateStopwatchDisplay() {
     let display = document.getElementById("time");
     let seconds = Math.floor(elapsedTime % 60);
@@ -81,97 +79,37 @@ function loaded() {
     let hundredths = Math.floor(elapsedTime * 100) % 100;
     display.innerHTML = `${seconds}:${hundredths}`;
   }
-
-
-
-
-
-  function dotRed() {
-    dot = document.getElementsByClassName("dot")[dotnum];
-    dot.classList.add("red"); 
-    dotnum++
-  }
   
-  function red() {
-    // Generate a random number between 0.5 and 1.5
-    var delay = Math.random() * (2.5 - 1) + 1;
-    // Wait for the specified amount of time
+  function changeDotColor(dot, delay) {
     setTimeout(function() {
-      dotRed()
+      dot.classList.add('red');
     }, delay * 1000);
   }
   
-  function redSlow() {
-    // Generate a random number between 0.5 and 1.5
-    var delay = Math.random() * (2.5 - 1.5) + 1.5;
-    // Wait for the specified amount of time
-    setTimeout(function() {
-      dotRed()
-    }, delay * 1000);
+  function resetDotColor(dot) {
+    dot.classList.remove('red');
   }
   
-  function dotClear() {
-    dot = document.getElementsByClassName("dot")[dotnum];
-    dot.classList.remove("red");
-    dotnum++
-  }
-
-  function down() {
-    dotnum = 0;
-    wait = true;
-    for (let x = 0; x < 3; x++) {
-      red();
+  document.getElementById('button').addEventListener('mousedown', function() {
+    // Change the color of the first 3 dots at random intervals between 1 and 2.5 seconds
+    for (let i = 0; i < 3; i++) {
+      let delay = Math.random() * (2.5 - 1) + 1;
+      changeDotColor(dots[i], delay);
     }
-    for (let x = 0; x < 2; x++) {
-      redSlow();
+    // Change the color of the last 2 dots at random intervals between 1.5 and 2.5 seconds
+    for (let i = 3; i < 5; i++) {
+      let delay = Math.random() * (2.5 - 1.5) + 1.5;
+      changeDotColor(dots[i], delay);
     }
-
-    
-    document.getElementsByClassName("dot")[0].classList.remove("red");
-    document.getElementsByClassName("dot")[1].classList.remove("red");
-    document.getElementsByClassName("dot")[2].classList.remove("red");
-    document.getElementsByClassName("dot")[3].classList.remove("red");
-    document.getElementsByClassName("dot")[4].classList.remove("red");
-    startStopwatch()
-    wait = false;
-    // var delay = Math.random() * (2.5 - 1) + 1;
-    // setTimeout(function() {
-    //   dotnum = 0;
-    //   for (let x = 0; x < 5; x++) {
-    //     dotClear();
-    //   }
-    //   startStopwatch()
-    //   wait = false;
-    // }, 1000);
-  }
+    startStopwatch();
+  });
   
-
-
-
-  let wait = true;
-  dotnum = 0;
-  const b = document.getElementById("button");
-  let timer;
-  b.onpointerdown = function() {
-    timer = setTimeout(down, 1500)
-  }
-  b.onpointerup = function() {
-    if (wait) {
-      let display = document.getElementById("time");
-      display.innerHTML = '--- FAIL';
-      setTimeout(function() {
-        document.getElementsByClassName("dot")[0].classList.remove("red");
-        document.getElementsByClassName("dot")[1].classList.remove("red");
-        document.getElementsByClassName("dot")[2].classList.remove("red");
-        document.getElementsByClassName("dot")[3].classList.remove("red");
-        document.getElementsByClassName("dot")[4].classList.remove("red");
-      }, 1000);
+  document.getElementById('button').addEventListener('mouseup', function() {
+    // Reset the color of all dots
+    for (let i = 0; i < 5; i++) {
+      resetDotColor(dots[i]);
     }
-    else {
-      updateStopwatchDisplay()
-    }
-    stopStopwatch()
-    clearTimeout(timer);
-  }
-
+    stopStopwatch();
+  });
+  
 }
