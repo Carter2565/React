@@ -99,7 +99,6 @@ function loaded() {
   }
   
   document.getElementById('button').onpointerdown = function() {
-    wait = 1;
     delay = Math.random() * (2.5 - 1.25) + 1.25;
     setTimeout(function() {
       if (wait = 1) { 
