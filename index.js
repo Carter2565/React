@@ -119,7 +119,7 @@ function loaded() {
       dot.classList.remove("red"); 
     }
     startStopwatch()
-    let RED = false;
+    RED = false;
   }
   b.onpointerup = function() {
     if (RED) {
