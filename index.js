@@ -101,26 +101,35 @@ function loaded() {
   document.getElementById('button').onpointerdown = function() {
     wait = true
     delay = Math.random() * (2.5 - 1.25) + 1.25;
-    if(!wait){return}
-    setTimeout(function() {
-      dots[0].classList.add('red');
-    }, delay * 1000);
+    if(wait){
+      setTimeout(function() {
+        dots[0].classList.add('red');
+      }, delay * 1000);
+    }
     delay += Math.random() * (2.5 - 1.25) + 1.25;
-    setTimeout(function() {
-      dots[1].classList.add('red');
-    }, delay * 1000);
+    if(wait){
+      setTimeout(function() {
+        dots[1].classList.add('red');
+      }, delay * 1000);
+    }
     delay += Math.random() * (2.5 - 1.25) + 1.25;
-    setTimeout(function() {
-      dots[2].classList.add('red');
-    }, delay * 1000);
+    if(wait){
+      setTimeout(function() {
+        dots[2].classList.add('red');
+      }, delay * 1000);
+    }
     delay += Math.random() * (2.5 - 1.25) + 1.25;
-    setTimeout(function() {
-      dots[3].classList.add('red');
-    }, delay * 1000);
+    if(wait){
+      setTimeout(function() {
+        dots[3].classList.add('red');
+      }, delay * 1000);
+    }
     delay += Math.random() * (2.5 - 1.25) + 1.25;
-    setTimeout(function() {
-      dots[4].classList.add('red');
-    }, delay * 1000);
+    if(wait){
+      setTimeout(function() {
+        dots[4].classList.add('red');
+      }, delay * 1000);
+    }
     startStopwatch();
     wait = false
   };
