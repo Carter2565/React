@@ -101,8 +101,8 @@ function loaded() {
   document.getElementById('button').onpointerdown = function() {
     wait = true
     delay = Math.random() * (2.5 - 1.25) + 1.25;
+    if(!wait){return}
     setTimeout(function() {
-      if(!wait){return}
       dots[0].classList.add('red');
     }, delay * 1000);
     delay += Math.random() * (2.5 - 1.25) + 1.25;
