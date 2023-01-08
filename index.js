@@ -46,7 +46,7 @@ function loaded() {
   let startTime;
   let isRunning = false;
   let dots = document.querySelectorAll('.dot');
-  let wait = fale;
+  let wait = false;
   let delay = 0;
   
   function startStopwatch() {
