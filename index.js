@@ -44,6 +44,11 @@ function loaded() {
 
 
 
+  let interval;
+  let elapsedTime = 0;
+  let startTime;
+  let isRunning = false;
+
   function startStopwatch() {
     if (!isRunning) {
       startTime = Date.now();
