@@ -138,7 +138,7 @@ function loaded() {
   const b = document.getElementById("button");
   let timer;
   b.onpointerdown = function() {
-    timer = setTimeout(down, 500)
+    timer = setTimeout(down, 1500)
   }
   b.onpointerup = function() {
     if (wait) {
