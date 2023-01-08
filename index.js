@@ -64,10 +64,50 @@ function redSlow() {
 }
 
 function loaded() {
+  let interval;
+  let elapsedTime = 0;
+  let startTime;
+  let isRunning = false;
+
+  function startStopwatch() {
+    if (!isRunning) {
+      startTime = Date.now();
+      interval = setInterval(updateStopwatch, 10);
+      isRunning = true;
+    }
+  }
+
+  function stopStopwatch() {
+    clearInterval(interval);
+    isRunning = false;
+  }
+
+  function resetStopwatch() {
+    stopStopwatch();
+    elapsedTime = 0;
+    updateStopwatchDisplay();
+  }
+
+  function updateStopwatch() {
+    elapsedTime += (Date.now() - startTime) / 1000;
+    // updateStopwatchDisplay();
+    startTime = Date.now();
+  }
+
+  function updateStopwatchDisplay() {
+    let display = document.getElementById("time");
+    let seconds = Math.floor(elapsedTime % 60);
+    let minutes = Math.floor(elapsedTime / 60);
+    let hundredths = Math.floor(elapsedTime * 100) % 100;
+    display.innerHTML = `${seconds}:${hundredths}`;
+  }
+
+
   const b = document.getElementById("button");
   let timer;
   b.onpointerdown = function() {
-    dotnum = 0
+    let dotnum = 0;
+    let red = true;
     for (let x = 0; x < 3; x++) {
       timer = setTimeout(red, 500);
     }
@@ -78,8 +118,18 @@ function loaded() {
       dot = document.getElementsByClassName("dot")[x];
       dot.classList.remove("red"); 
     }
+    startStopwatch()
+    let red = false;
   }
   b.onpointerup = function() {
+    if (red) {
+      let display = document.getElementById("time");
+      display.innerHTML = '--- FAIL';
+    }
+    else {
+      updateStopwatchDisplay()
+    }
+    stopStopwatch()
     clearTimeout(timer);
   }
 

@@ -8,9 +8,8 @@
     <div class="dot"></div>
   </div>
   <div class='time'>
-    <p>
-      Your time:
-    </p>
+    <p>Your time: </p>
+    <p id='time'></p>
   </div>
   <div class='Button' id="button">test</div>
 </div>
