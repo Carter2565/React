@@ -159,17 +159,19 @@ function loaded() {
     if (wait) {
       let display = document.getElementById("time");
       display.innerHTML = '--- FAIL';
+      setTimeout(function() {
+        document.getElementsByClassName("dot")[0].classList.remove("red");
+        document.getElementsByClassName("dot")[1].classList.remove("red");
+        document.getElementsByClassName("dot")[2].classList.remove("red");
+        document.getElementsByClassName("dot")[3].classList.remove("red");
+        document.getElementsByClassName("dot")[4].classList.remove("red");
+      }, 1000);
     }
     else {
       updateStopwatchDisplay()
     }
     stopStopwatch()
     clearTimeout(timer);
-    document.getElementsByClassName("dot")[0].classList.remove("red");
-    document.getElementsByClassName("dot")[1].classList.remove("red");
-    document.getElementsByClassName("dot")[2].classList.remove("red");
-    document.getElementsByClassName("dot")[3].classList.remove("red");
-    document.getElementsByClassName("dot")[4].classList.remove("red");
   }
 
 }
