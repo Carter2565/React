@@ -104,8 +104,8 @@ function loaded() {
     setTimeout(function() {
       if (wait == 1) { 
         dots[0].classList.add('red');
-        console.log(wait)
       }
+      console.log(wait)
     }, delay * 1000);
     delay += Math.random() * (2.5 - 1.25) + 1.25;
     setTimeout(function() {
