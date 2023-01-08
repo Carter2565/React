@@ -20,6 +20,11 @@
   margin-bottom: 25px;
 }
 
+.time p {
+  font-size: 24px;
+  padding: 45px
+}
+
 .button {
   width: 825px;
   height: 825px;
