@@ -7,8 +7,8 @@
     <div class="dot"></div>
     <div class="dot"></div>
   </div>
-  <div class='time'></div>
-  <div class='Button'></div>
+  <div class='time'>your time is:</div>
+  <div class='Button'>test</div>
 </div>
 
 
