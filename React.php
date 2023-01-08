@@ -9,7 +9,7 @@
   </div>
   <div class='time'>
     <p>Your time: </p>
-    <p id='time'></p>
+    <p id='time'>00:00</p>
   </div>
   <div class='Button' id="button">test</div>
 </div>

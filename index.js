@@ -68,7 +68,7 @@ function loaded() {
   
   function updateStopwatch() {
     elapsedTime += (Date.now() - startTime) / 1000;
-    updateStopwatchDisplay();
+    // updateStopwatchDisplay();
     startTime = Date.now();
   }
   
@@ -97,6 +97,7 @@ function loaded() {
   document.getElementById('button').addEventListener('mousedown', function() {
     changeDotColor();
     startStopwatch();
+    updateStopwatchDisplay();
   });
   
   document.getElementById('button').addEventListener('mouseup', function() {
