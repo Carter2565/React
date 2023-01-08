@@ -125,6 +125,15 @@ function loaded() {
     for (let x = 0; x < 2; x++) {
       redSlow();
     }
+
+    
+    document.getElementsByClassName("dot")[0].classList.remove("red");
+    document.getElementsByClassName("dot")[1].classList.remove("red");
+    document.getElementsByClassName("dot")[2].classList.remove("red");
+    document.getElementsByClassName("dot")[3].classList.remove("red");
+    document.getElementsByClassName("dot")[4].classList.remove("red");
+    startStopwatch()
+    wait = false;
     // var delay = Math.random() * (2.5 - 1) + 1;
     // setTimeout(function() {
     //   dotnum = 0;
