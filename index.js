@@ -137,7 +137,7 @@ function loaded() {
       }
     }, delay * 1000);
     startStopwatch();
-    wait = false
+    wait = 'false'
   };
   
   document.getElementById('button').onpointerup = function() {
