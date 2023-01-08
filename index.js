@@ -45,9 +45,18 @@ function dotRed() {
   dotnum++
 }
 
-function test() {
+function red() {
   // Generate a random number between 0.5 and 1.5
   var delay = Math.random() * (2.5 - 1) + 1;
+  // Wait for the specified amount of time
+  setTimeout(function() {
+    dotRed()
+  }, delay * 1000);
+}
+
+function redSlow() {
+  // Generate a random number between 0.5 and 1.5
+  var delay = Math.random() * (2.5 - 1.5) + 1.5;
   // Wait for the specified amount of time
   setTimeout(function() {
     dotRed()
@@ -59,9 +68,15 @@ function loaded() {
   let timer;
   b.onpointerdown = function() {
     dotnum = 0
-    for (let x = 0; x < 5; x++) {
-      timer = setTimeout(test, 500);
+    for (let x = 0; x < 3; x++) {
+      timer = setTimeout(red, 500);
     }
+    for (let x = 0; x < 2; x++) {
+      timer = setTimeout(redSlow, 500);
+    }
+    // for (let x = 0; x < 5; x++) {
+
+    // }
   }
   b.onpointerup = function() {
     clearTimeout(timer);
