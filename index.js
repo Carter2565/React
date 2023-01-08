@@ -93,10 +93,10 @@ function loaded() {
   const changeColor = 'red';
 
   // Set the interval in seconds
-  const interval = 1;
+  const interval1 = 1;
 
   // Set the random interval in milliseconds
-  const randomInterval = Math.random() * interval + interval;
+  const randomInterval = Math.random() * interval1 + interval1;
 
   function changeDotColor() {
     dots.forEach((dot) => {
@@ -115,7 +115,7 @@ function loaded() {
     setTimeout(resetDotColor, randomInterval);
     startStopwatch();
     wait = false;
-  }, interval);
+  }, interval1);
 
 
   let wait = true;
