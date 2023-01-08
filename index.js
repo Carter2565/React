@@ -119,12 +119,15 @@ function loaded() {
     for (let x = 0; x < 2; x++) {
       redSlow();
     }
-    for (let x = 0; x < 5; x++) {
-      dot = document.getElementsByClassName("dot")[x];
-      dot.classList.remove("red"); 
-    }
-    stopwatchstart()
-    wait = false;
+    var delay = Math.random() * (2.5 - 1) + 1;
+    setTimeout(function() {
+      for (let x = 0; x < 5; x++) {
+        dot = document.getElementsByClassName("dot")[x];
+        dot.classList.remove("red"); 
+      }
+      startStopwatch()
+      wait = false;
+    }, 1000);
   }
   
 
