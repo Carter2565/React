@@ -47,7 +47,7 @@ function dotRed() {
 
 function test() {
   // Generate a random number between 0.5 and 1.5
-  var delay = Math.random() + 0.5;
+  var delay = Math.random() * (2.5 - 1) + 1;
   // Wait for the specified amount of time
   setTimeout(function() {
     dotRed()
