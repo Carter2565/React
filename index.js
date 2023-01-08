@@ -102,24 +102,27 @@ function loaded() {
     display.innerHTML = `${seconds}:${hundredths}`;
   }
 
+  function down() {
+    let dotnum = 0;
+    let RED = true;
+    for (let x = 0; x < 3; x++) {
+      redFast();
+    }
+    for (let x = 0; x < 2; x++) {
+      redSlow();
+    }
+    for (let x = 0; x < 5; x++) {
+      dot = document.getElementsByClassName("dot")[x];
+      dot.classList.remove("red"); 
+    }
+    startStopwatch()
+    RED = false;
+  }
 
   const b = document.getElementById("button");
   let timer;
   b.onpointerdown = function() {
-    let dotnum = 0;
-    let RED = true;
-    for (let x = 0; x < 3; x++) {
-      timer = setTimeout(redFast, 500);
-    }
-    for (let x = 0; x < 2; x++) {
-      timer = setTimeout(redSlow, 500);
-    }
-    // for (let x = 0; x < 5; x++) {
-    //   dot = document.getElementsByClassName("dot")[x];
-    //   dot.classList.remove("red"); 
-    // }
-    startStopwatch()
-    RED = false;
+    timer = setTimeout(down, 500);
   }
   b.onpointerup = function() {
     if (RED) {
