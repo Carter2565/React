@@ -17,6 +17,7 @@
   background-color: #242426;
   border-radius: 25px;
   display: inline-block;
+  vertical-align: 50%;
 }
 
 .button {
