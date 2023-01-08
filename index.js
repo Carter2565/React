@@ -45,7 +45,7 @@ function dotRed() {
   dotnum++
 }
 
-function red() {
+function redFast() {
   // Generate a random number between 0.5 and 1.5
   var delay = Math.random() * (2.5 - 1) + 1;
   // Wait for the specified amount of time
@@ -109,7 +109,7 @@ function loaded() {
     let dotnum = 0;
     let RED = true;
     for (let x = 0; x < 3; x++) {
-      timer = setTimeout(red, 500);
+      timer = setTimeout(redFast, 500);
     }
     for (let x = 0; x < 2; x++) {
       timer = setTimeout(redSlow, 500);
