@@ -7,8 +7,12 @@
     <div class="dot"></div>
     <div class="dot"></div>
   </div>
-  <div class='time'>your time is:</div>
-  <div class='Button'>test</div>
+  <div class='time'>
+    <p>
+      Your time:
+    </p>
+  </div>
+  <div class='Button' id='button'>test</div>
 </div>
 
 

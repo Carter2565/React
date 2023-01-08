@@ -39,3 +39,12 @@ function include(file, path="/assets/php/",element="content" ) {
   includeHTML();
 }
 
+const b = document.getElementById("button");
+let timer;
+b.onpointerdown = function() {
+  timer = setTimeout(alert, 2000, "you held me down for 2 second");
+}
+b.onpointerup = function() {
+  clearTimeout(timer);
+}
+
