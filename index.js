@@ -46,7 +46,7 @@ function loaded() {
   let startTime;
   let isRunning = false;
   let dots = document.querySelectorAll('.dot');
-  let wait = false;
+  let wait = 0;
   let delay = 0;
   
   function startStopwatch() {
@@ -99,7 +99,7 @@ function loaded() {
   }
   
   document.getElementById('button').onpointerdown = function() {
-    wait = true;
+    wait = 1;
     delay = Math.random() * (2.5 - 1.25) + 1.25;
     setTimeout(function() {
       if (!wait) { 
@@ -132,11 +132,11 @@ function loaded() {
       }
     }, delay * 1000);
     startStopwatch();
-    wait = false
+    wait = 0;
   };
   
   document.getElementById('button').onpointerup = function() {
-    wait = false
+    wait = 0
     // Reset the color of all dots
     for (let i = 0; i < 5; i++) {
       resetDotColor(dots[i]);
