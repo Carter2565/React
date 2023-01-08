@@ -74,9 +74,10 @@ function loaded() {
     for (let x = 0; x < 2; x++) {
       timer = setTimeout(redSlow, 500);
     }
-    // for (let x = 0; x < 5; x++) {
-
-    // }
+    for (let x = 0; x < 5; x++) {
+      dot = document.getElementsByClassName("dot")[x];
+      dot.classList.remove("red"); 
+    }
   }
   b.onpointerup = function() {
     clearTimeout(timer);
