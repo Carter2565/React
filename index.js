@@ -139,6 +139,7 @@ function loaded() {
     else {
       updateStopwatchDisplay();
     }
+    resetStopwatch()
   };
   
 }
