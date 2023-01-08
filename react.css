@@ -1,11 +1,14 @@
+.react {
+    background-color: #1b1c1f;
+}
 .dots {
     text-align: center;
   }
   
 .dot {
-    width: 10px;
-    height: 10px;
-    background-color: black;
+    width: 40px;
+    height: 40px;
+    background-color: #23272e;
     border-radius: 50%;
     display: inline-block;
   }
