@@ -86,7 +86,7 @@ function loaded() {
       setTimeout(function() {
         dots[i].classList.add('red');
       }, delay * 1000);
-      delay = Math.random() * (2.5 - 1.25) + 1.25;
+      delay += Math.random() * (2.5 - 1.25) + 1.25;
     }
   }
   
