@@ -39,8 +39,14 @@ function include(file, path="/assets/php/",element="content" ) {
   includeHTML();
 }
 
+function dotRed() {
+  dot = document.getElementsByClassName("dot")[x];
+  dot.classList.add("red"); 
+  dotnum++
+}
+
 function test() {
-  for (let x = -1; x < 5; x++) {
+  for (let x = 0; x < 5; x++) {
     // Generate a random number between 0.5 and 1.5
     var delay = Math.random() + 0.5;
     // Wait for the specified amount of time
@@ -56,6 +62,7 @@ function loaded() {
   const b = document.getElementById("button");
   let timer;
   b.onpointerdown = function() {
+    dotnum = 0
     timer = setTimeout(test, 1500);
   }
   b.onpointerup = function() {
