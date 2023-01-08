@@ -46,7 +46,7 @@ function loaded() {
   let startTime;
   let isRunning = false;
   let dots = document.querySelectorAll('.dot');
-  let wait = false;
+  let wait = 'false';
   let delay = 0;
   
   function startStopwatch() {
@@ -99,10 +99,10 @@ function loaded() {
   }
   
   document.getElementById('button').onpointerdown = function() {
-    wait = true
+    wait = 'hi'
     delay = Math.random() * (2.5 - 1.25) + 1.25;
     console.log(wait)
-    setTimeout(function(wait) {
+    setTimeout(function() {
       console.log(wait)
       if(wait){
         dots[0].classList.add('red');
