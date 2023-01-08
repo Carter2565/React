@@ -3,8 +3,8 @@
   }
   
 .dot {
-    width: 40px;
-    height: 40px;
+    width: 100px;
+    height: 100px;
     background-color: #2d3440;
     border-radius: 50%;
     display: inline-block;
