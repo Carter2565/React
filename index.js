@@ -46,6 +46,7 @@ function loaded() {
   let startTime;
   let isRunning = false;
   let dots = document.querySelectorAll('.dot');
+  let wait = false
   
   function startStopwatch() {
     if (!isRunning) {
@@ -94,7 +95,8 @@ function loaded() {
     dot.classList.remove('red');
   }
   
-  document.getElementById('button').addEventListener('mousedown', function() {
+  document.getElementById('button').onpointerdown = function() {
+    wait = true
     let delay = Math.random() * (2.5 - 1.25) + 1.25;
     setTimeout(function() {
       dots[0].classList.add('red');
@@ -121,15 +123,22 @@ function loaded() {
       resetDotColor(dots[i]);
     }
     startStopwatch();
-    updateStopwatchDisplay();
-  });
+    wait = false
+  };
   
-  document.getElementById('button').addEventListener('mouseup', function() {
+  document.getElementById('button').onpointerup = function() {
     // Reset the color of all dots
     for (let i = 0; i < 5; i++) {
       resetDotColor(dots[i]);
     }
     stopStopwatch();
-  });
+    if (wait) { 
+      let display = document.getElementById("time");
+      display.innerHTML = '--- FAIL';
+    }
+    else {
+      updateStopwatchDisplay();
+    }
+  };
   
 }
