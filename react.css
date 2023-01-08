@@ -17,7 +17,7 @@
     background-color: #242426;
     border-radius: 25px;
     display: flex;
-    
+    align-self: center;
 }
 
 .button {
@@ -26,4 +26,5 @@
     background-color: #242426;
     border-radius: 25px;
     display: flex;
+    align-self: center;
 }
