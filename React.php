@@ -12,7 +12,7 @@
       Your time:
     </p>
   </div>
-  <div class='Button' id='button'>test</div>
+  <button class='Button' id="button">test</button>
 </div>
 
 
