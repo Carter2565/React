@@ -80,10 +80,14 @@ function loaded() {
     display.innerHTML = `${seconds}:${hundredths}`;
   }
   
-  function changeDotColor(dot, delay) {
-    setTimeout(function() {
-      dot.classList.add('red');
-    }, delay * 1000);
+  function changeDotColor() {
+    let delay = Math.random() * (2.5 - 1.25) + 1.25;
+    for (let i = 0; i < 5; i++) {
+      setTimeout(function() {
+        dots[i].classList.add('red');
+      }, delay);
+      delay = Math.random() * (2.5 - 1.25) + 1.25;
+    }
   }
   
   function resetDotColor(dot) {
@@ -91,16 +95,7 @@ function loaded() {
   }
   
   document.getElementById('button').addEventListener('mousedown', function() {
-    // Change the color of the first 3 dots at random intervals between 1 and 2.5 seconds
-    for (let i = 0; i < 3; i++) {
-      let delay = Math.random() * (2.5 - 1) + 1;
-      changeDotColor(dots[i], delay);
-    }
-    // Change the color of the last 2 dots at random intervals between 1.5 and 2.5 seconds
-    for (let i = 3; i < 5; i++) {
-      let delay = Math.random() * (2.5 - 1.5) + 1.5;
-      changeDotColor(dots[i], delay);
-    }
+    changeDotColor();
     startStopwatch();
   });
   
