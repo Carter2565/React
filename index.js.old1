@@ -83,60 +83,39 @@ function loaded() {
   }
 
 
+  // Select the dots
+  const dots = document.querySelectorAll('.dot');
 
+  // Set the initial color of the dots
+  const initialColor = 'black';
 
+  // Set the change color of the dots
+  const changeColor = 'red';
 
-  function dotRed() {
-    dot = document.getElementsByClassName("dot")[dotnum];
-    dot.classList.add("red"); 
-    dotnum++
-  }
-  
-  function red() {
-    // Generate a random number between 0.5 and 1.5
-    var delay = Math.random() * (2.5 - 1) + 1;
-    // Wait for the specified amount of time
-    setTimeout(function() {
-      dotRed()
-    }, delay * 1000);
-  }
-  
-  function redSlow() {
-    // Generate a random number between 0.5 and 1.5
-    var delay = Math.random() * (2.5 - 1.5) + 1.5;
-    // Wait for the specified amount of time
-    setTimeout(function() {
-      dotRed()
-    }, delay * 1000);
-  }
-  
-  function dotClear() {
-    dot = document.getElementsByClassName("dot")[dotnum];
-    dot.classList.remove("red");
-    dotnum++
+  // Set the interval in seconds
+  const interval1 = 1;
+
+  // Set the random interval in milliseconds
+  const randomInterval = Math.random() * interval1 + interval1;
+
+  function changeDotColor() {
+    dots.forEach((dot) => {
+      dot.style.color = changeColor;
+    });
   }
 
-  function down() {
-    dotnum = 0;
-    wait = true;
-    for (let x = 0; x < 3; x++) {
-      red();
-    }
-    for (let x = 0; x < 2; x++) {
-      redSlow();
-    }
-    var delay = Math.random() * (2.5 - 1) + 1;
-    setTimeout(function() {
-      dotnum = 0;
-      for (let x = 0; x < 5; x++) {
-        dotClear();
-      }
-      startStopwatch()
-      wait = false;
-    }, 1000);
+  function resetDotColor() {
+    dots.forEach((dot) => {
+      dot.style.color = initialColor;
+    });
   }
-  
 
+  setInterval(() => {
+    changeDotColor();
+    setTimeout(resetDotColor, randomInterval);
+    startStopwatch();
+    wait = false;
+  }, interval1);
 
 
   let wait = true;
@@ -144,7 +123,7 @@ function loaded() {
   const b = document.getElementById("button");
   let timer;
   b.onpointerdown = function() {
-    timer = setTimeout(down, 1500)
+    timer = setTimeout(setInterval, 1500)
   }
   b.onpointerup = function() {
     if (wait) {
