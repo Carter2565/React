@@ -102,31 +102,31 @@ function loaded() {
     wait = true
     delay = Math.random() * (2.5 - 1.25) + 1.25;
     setTimeout(function() {
-      if (wait) { 
+      if (!wait) { 
         dots[0].classList.add('red');
       }
     }, delay * 1000);
     delay += Math.random() * (2.5 - 1.25) + 1.25;
     setTimeout(function() {
-      if (wait) { 
+      if (!wait) { 
         dots[1].classList.add('red');
       }
     }, delay * 1000);
     delay += Math.random() * (2.5 - 1.25) + 1.25;
     setTimeout(function() {
-      if (wait) { 
+      if (!wait) { 
         dots[2].classList.add('red');
       }
     }, delay * 1000);
     delay += Math.random() * (2.5 - 1.25) + 1.25;
     setTimeout(function() {
-      if (wait) { 
+      if (!wait) { 
         dots[3].classList.add('red');
       }
     }, delay * 1000);
     delay += Math.random() * (2.5 - 1.25) + 1.25;
     setTimeout(function() {
-      if (wait) { 
+      if (!wait) { 
         dots[4].classList.add('red');
       }
     }, delay * 1000);
