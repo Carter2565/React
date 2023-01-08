@@ -86,7 +86,7 @@ function loaded() {
   
   function changeDotColor(dot) {
     if(wait){
-    dots[dot].classList.add('red');
+      dots[dot].classList.add('red');
     }
   }
   
