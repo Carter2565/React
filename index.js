@@ -39,50 +39,98 @@ function include(file, path="/assets/php/",element="content" ) {
   includeHTML();
 }
 
-function dotRed() {
-  dot = document.getElementsByClassName("dot")[dotnum];
-  dot.classList.add("red"); 
-  dotnum++
-}
-
-function red() {
-  // Generate a random number between 0.5 and 1.5
-  var delay = Math.random() * (2.5 - 1) + 1;
-  // Wait for the specified amount of time
-  setTimeout(function() {
-    dotRed()
-  }, delay * 1000);
-}
-
-function redSlow() {
-  // Generate a random number between 0.5 and 1.5
-  var delay = Math.random() * (2.5 - 1.5) + 1.5;
-  // Wait for the specified amount of time
-  setTimeout(function() {
-    dotRed()
-  }, delay * 1000);
-}
-
 function loaded() {
-  let wait = true;
-  dotnum = 0;
-  const b = document.getElementById("button");
-  let timer;
-  b.onpointerdown = function() {
+
+
+
+
+  function startStopwatch() {
+    if (!isRunning) {
+      startTime = Date.now();
+      interval = setInterval(updateStopwatch, 10);
+      isRunning = true;
+    }
+  }
+
+  function stopStopwatch() {
+    clearInterval(interval);
+    isRunning = false;
+  }
+
+  function resetStopwatch() {
+    stopStopwatch();
+    elapsedTime = 0;
+    updateStopwatchDisplay();
+  }
+
+  function updateStopwatch() {
+    elapsedTime += (Date.now() - startTime) / 1000;
+    // updateStopwatchDisplay();
+    startTime = Date.now();
+  }
+
+  function updateStopwatchDisplay() {
+    let display = document.getElementById("time");
+    let seconds = Math.floor(elapsedTime % 60);
+    let minutes = Math.floor(elapsedTime / 60);
+    let hundredths = Math.floor(elapsedTime * 100) % 100;
+    display.innerHTML = `${seconds}:${hundredths}`;
+  }
+
+
+
+
+
+  function dotRed() {
+    dot = document.getElementsByClassName("dot")[dotnum];
+    dot.classList.add("red"); 
+    dotnum++
+  }
+  
+  function red() {
+    // Generate a random number between 0.5 and 1.5
+    var delay = Math.random() * (2.5 - 1) + 1;
+    // Wait for the specified amount of time
+    setTimeout(function() {
+      dotRed()
+    }, delay * 1000);
+  }
+  
+  function redSlow() {
+    // Generate a random number between 0.5 and 1.5
+    var delay = Math.random() * (2.5 - 1.5) + 1.5;
+    // Wait for the specified amount of time
+    setTimeout(function() {
+      dotRed()
+    }, delay * 1000);
+  }
+  
+  function down() {
     dotnum = 0;
     wait = true;
     for (let x = 0; x < 3; x++) {
-      timer = setTimeout(red, 500);
+      red();
     }
     for (let x = 0; x < 2; x++) {
-      timer = setTimeout(redSlow, 500);
+      redSlow();
     }
     for (let x = 0; x < 5; x++) {
       dot = document.getElementsByClassName("dot")[x];
       dot.classList.remove("red"); 
     }
-    sotpwatchstart()
+    stopwatchstart()
     wait = false;
+  }
+  
+
+
+
+  let wait = true;
+  dotnum = 0;
+  const b = document.getElementById("button");
+  let timer;
+  b.onpointerdown = function() {
+    timer = setTimeout(down, 500)
   }
   b.onpointerup = function() {
     if (wait) {
