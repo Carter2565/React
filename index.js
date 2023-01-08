@@ -119,11 +119,6 @@ function loaded() {
     setTimeout(function() {
       dots[4].classList.add('red');
     }, delay * 1000);
-    delay += Math.random() * (2.5 - 1.25) + 1.25;
-    // Reset the color of all dots
-    for (let i = 0; i < 5; i++) {
-      resetDotColor(dots[i]);
-    }
     startStopwatch();
     wait = false
   };
