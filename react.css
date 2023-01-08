@@ -16,7 +16,7 @@
     height: 150px;
     background-color: #242426;
     border-radius: 25px;
-    display: flex;
+    display: inline-block;
     align-self: center;
 }
 
@@ -25,6 +25,6 @@
     height: 825px;
     background-color: #242426;
     border-radius: 25px;
-    display: flex;
+    display: inline-block;
     align-self: center;
 }
