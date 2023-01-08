@@ -40,7 +40,7 @@ function include(file, path="/assets/php/",element="content" ) {
 }
 
 function dotRed() {
-  dot = document.getElementsByClassName("dot")[x];
+  dot = document.getElementsByClassName("dot")[dotnum];
   dot.classList.add("red"); 
   dotnum++
 }
