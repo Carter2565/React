@@ -69,8 +69,8 @@ function loaded() {
   const b = document.getElementById("button");
   let timer;
   b.onpointerdown = function() {
-    let dotnum = 0;
-    let wait = true;
+    dotnum = 0;
+    wait = true;
     for (let x = 0; x < 3; x++) {
       timer = setTimeout(red, 500);
     }
@@ -82,7 +82,7 @@ function loaded() {
       dot.classList.remove("red"); 
     }
     sotpwatchstart()
-    let wait = false;
+    wait = false;
   }
   b.onpointerup = function() {
     if (wait) {
