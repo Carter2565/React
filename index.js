@@ -46,7 +46,8 @@ function loaded() {
   let startTime;
   let isRunning = false;
   let dots = document.querySelectorAll('.dot');
-  let wait = false
+  let wait = false;
+  let delay = 0;
   
   function startStopwatch() {
     if (!isRunning) {
@@ -74,11 +75,12 @@ function loaded() {
   }
   
   function updateStopwatchDisplay() {
+    parts = delay.split('.')
     let display = document.getElementById("time");
     let seconds = Math.floor(elapsedTime % 60);
     let minutes = Math.floor(elapsedTime / 60);
     let hundredths = Math.floor(elapsedTime * 100) % 100;
-    display.innerHTML = `${seconds}:${hundredths}`;
+    display.innerHTML = `${seconds-parts[0]}:${hundredths-parts[1]}`;
   }
   
   function changeDotColor() {
@@ -97,7 +99,7 @@ function loaded() {
   
   document.getElementById('button').onpointerdown = function() {
     wait = true
-    let delay = Math.random() * (2.5 - 1.25) + 1.25;
+    delay = Math.random() * (2.5 - 1.25) + 1.25;
     setTimeout(function() {
       dots[0].classList.add('red');
     }, delay * 1000);
