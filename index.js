@@ -84,7 +84,7 @@ function loaded() {
     display.innerHTML = `${elapsedTime} -- ${hundredths} Your Time: ${seconds-parts[0]}.${hundredths-ms.substring(0,3)}`;
   }
   
-  function changeDotColor(dot,wait) {
+  function changeDotColor(dot) {
     if(wait){
       dots[dot].classList.add('red');
     }
@@ -98,19 +98,19 @@ function loaded() {
     wait = true
     delay = Math.random() * (2.5 - 1.25) + 1.25;
     console.log(wait)
-    setTimeout(changeDotColor(0, wait), delay * 1000);
+    setTimeout(function(){changeDotColor(0)}, delay * 1000);
     delay += Math.random() * (2.5 - 1.25) + 1.25;
     console.log(wait)
-    setTimeout(changeDotColor(1, wait), delay * 1000);
+    setTimeout(function(){changeDotColor(0)}, delay * 1000);
     delay += Math.random() * (2.5 - 1.25) + 1.25;
     console.log(wait)
-    setTimeout(changeDotColor(2, wait), delay * 1000);
+    setTimeout(function(){changeDotColor(0)}, delay * 1000);
     delay += Math.random() * (2.5 - 1.25) + 1.25;
     console.log(wait)
-    setTimeout(changeDotColor(3, wait), delay * 1000);
+    setTimeout(function(){changeDotColor(0)}, delay * 1000);
     delay += Math.random() * (2.5 - 1.25) + 1.25;
     console.log(wait)
-    setTimeout(changeDotColor(4, wait), delay * 1000);
+    setTimeout(function(){changeDotColor(0)}, delay * 1000);
     startStopwatch();
     wait = false
   };
