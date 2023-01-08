@@ -11,6 +11,10 @@
   display: inline-block;
   }
 
+.red {
+  background-color: crimson;
+}
+
 .time {
   width: 825px;
   height: 150px;

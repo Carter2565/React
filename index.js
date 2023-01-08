@@ -40,14 +40,25 @@ function include(file, path="/assets/php/",element="content" ) {
 }
 
 function test() {
-  window.alert("you held me down for 2 second")
+  let y = document.getElementsByClassName("dot");
+  y = y.length -1
+  for (let x = y; x > 0; x--) {
+    // Generate a random number between 0.5 and 1.5
+    var delay = Math.random() + 0.5;
+    // Wait for the specified amount of time
+    setTimeout(function() {
+      dot = document.getElementsByClassName("dot")[x];
+      dot.classList.add("red");
+    }, delay * 1000);
+    
+  }
 }
 
 function loaded() {
   const b = document.getElementById("button");
   let timer;
   b.onpointerdown = function() {
-    timer = setTimeout(test, 2000);
+    timer = setTimeout(test, 1500);
   }
   b.onpointerup = function() {
     clearTimeout(timer);
