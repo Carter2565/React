@@ -101,7 +101,7 @@ function loaded() {
   document.getElementById('button').onpointerdown = function() {
     wait = true
     delay = Math.random() * (2.5 - 1.25) + 1.25;
-    
+    console.log(wait)
     setTimeout(function(wait) {
       console.log(wait)
       if(wait){
@@ -109,28 +109,28 @@ function loaded() {
       }
     }, delay * 1000);
     delay += Math.random() * (2.5 - 1.25) + 1.25;
-    setTimeout(function(wait) {
+    setTimeout(function() {
       console.log(wait)
       if(wait){
         dots[1].classList.add('red');
       }
     }, delay * 1000);
     delay += Math.random() * (2.5 - 1.25) + 1.25;
-    setTimeout(function(wait) {
+    setTimeout(function() {
       console.log(wait)
       if(wait){
         dots[2].classList.add('red');
       }
     }, delay * 1000);
     delay += Math.random() * (2.5 - 1.25) + 1.25;
-    setTimeout(function(wait) {
+    setTimeout(function() {
       console.log(wait)
       if(wait){
         dots[3].classList.add('red');
       }
     }, delay * 1000);
     delay += Math.random() * (2.5 - 1.25) + 1.25;
-    setTimeout(function(wait) {
+    setTimeout(function() {
       console.log(wait)
       if(wait){
         dots[4].classList.add('red');
