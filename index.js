@@ -85,6 +85,7 @@ function loaded() {
   }
   
   function changeDotColor(dot) {
+    console.log(wait)
     if(wait){
       dots[dot].classList.add('red');
     }
