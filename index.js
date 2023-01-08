@@ -75,7 +75,7 @@ function loaded() {
   }
   
   function updateStopwatchDisplay() {
-    parts = delay.split('.')
+    parts = String(delay).split('.')
     let display = document.getElementById("time");
     let seconds = Math.floor(elapsedTime % 60);
     let minutes = Math.floor(elapsedTime / 60);
