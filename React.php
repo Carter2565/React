@@ -1,17 +1,9 @@
 <html>
   <head>
-    <style>
-      .dot {
-        width: 10px;
-        height: 10px;
-        background-color: black;
-        border-radius: 50%;
-        display: inline-block;
-      }
-    </style>
+    <link href="react.css" rel="stylesheet">
   </head>
   <body>
-    <div>
+    <div class="dots">
       <div class="dot"></div>
       <div class="dot"></div>
       <div class="dot"></div>
@@ -20,3 +12,5 @@
     </div>
   </body>
 </html>
+
+
