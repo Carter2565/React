@@ -110,7 +110,7 @@ function loaded() {
     }, delay * 1000);
   }
   
-  function dot() {
+  function dotClear() {
     dot = document.getElementsByClassName("dot")[dotnum];
     dot.classList.remove("red");
   }
@@ -128,7 +128,7 @@ function loaded() {
     setTimeout(function() {
       dotnum = 0;
       for (let x = 0; x < 5; x++) {
-        dot();
+        dotClear();
       }
       startStopwatch()
       wait = false;
