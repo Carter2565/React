@@ -113,6 +113,7 @@ function loaded() {
   function dotClear() {
     dot = document.getElementsByClassName("dot")[dotnum];
     dot.classList.remove("red");
+    dotnum++
   }
 
   function down() {
