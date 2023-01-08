@@ -64,7 +64,7 @@ function loaded() {
   function resetStopwatch() {
     stopStopwatch();
     elapsedTime = 0;
-    updateStopwatchDisplay();
+    // updateStopwatchDisplay();
   }
   
   function updateStopwatch() {
