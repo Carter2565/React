@@ -101,33 +101,33 @@ function loaded() {
   document.getElementById('button').onpointerdown = function() {
     delay = Math.random() * (2.5 - 1.25) + 1.25;
     setTimeout(function() {
-      if (wait = 1) { 
+      if (wait == 1) { 
         dots[0].classList.add('red');
         console.log(wait)
       }
     }, delay * 1000);
     delay += Math.random() * (2.5 - 1.25) + 1.25;
     setTimeout(function() {
-      if (wait = 1) { 
+      if (wait == 1) { 
         dots[1].classList.add('red');
         console.log(wait)
       }
     }, delay * 1000);
     delay += Math.random() * (2.5 - 1.25) + 1.25;
     setTimeout(function() {
-      if (wait = 1) { 
+      if (wait == 1) { 
         dots[2].classList.add('red');
       }
     }, delay * 1000);
     delay += Math.random() * (2.5 - 1.25) + 1.25;
     setTimeout(function() {
-      if (wait = 1) { 
+      if (wait == 1) { 
         dots[3].classList.add('red');
       }
     }, delay * 1000);
     delay += Math.random() * (2.5 - 1.25) + 1.25;
     setTimeout(function() {
-      if (wait = 1) { 
+      if (wait == 1) { 
         dots[4].classList.add('red');
       }
     }, delay * 1000);
