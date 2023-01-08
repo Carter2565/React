@@ -12,7 +12,7 @@
       Your time:
     </p>
   </div>
-  <button class='Button' id="button">test</button>
+  <div class='Button' id="button">test</div>
 </div>
 <img src='empty.png' onload='loaded()'>
 
