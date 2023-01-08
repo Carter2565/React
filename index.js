@@ -46,7 +46,7 @@ function loaded() {
   let startTime;
   let isRunning = false;
   let dots = document.querySelectorAll('.dot');
-  let wait = 0;
+  let wait = false;
   let delay = 0;
   
   function startStopwatch() {
@@ -99,46 +99,33 @@ function loaded() {
   }
   
   document.getElementById('button').onpointerdown = function() {
-    wait = 1;
+    wait = true
     delay = Math.random() * (2.5 - 1.25) + 1.25;
     setTimeout(function() {
-      if (wait == 1) { 
-        dots[0].classList.add('red');
-      }
-      console.log(wait)
+      if(!wait){return}
+      dots[0].classList.add('red');
     }, delay * 1000);
     delay += Math.random() * (2.5 - 1.25) + 1.25;
     setTimeout(function() {
-      if (wait == 1) { 
-        dots[1].classList.add('red');
-        console.log(wait)
-      }
+      dots[1].classList.add('red');
     }, delay * 1000);
     delay += Math.random() * (2.5 - 1.25) + 1.25;
     setTimeout(function() {
-      if (wait == 1) { 
-        dots[2].classList.add('red');
-      }
+      dots[2].classList.add('red');
     }, delay * 1000);
     delay += Math.random() * (2.5 - 1.25) + 1.25;
     setTimeout(function() {
-      if (wait == 1) { 
-        dots[3].classList.add('red');
-      }
+      dots[3].classList.add('red');
     }, delay * 1000);
     delay += Math.random() * (2.5 - 1.25) + 1.25;
     setTimeout(function() {
-      if (wait == 1) { 
-        dots[4].classList.add('red');
-      }
+      dots[4].classList.add('red');
     }, delay * 1000);
     startStopwatch();
-    wait = 0;
+    wait = false
   };
   
   document.getElementById('button').onpointerup = function() {
-    wait = 0
-    console.log(wait)
     // Reset the color of all dots
     for (let i = 0; i < 5; i++) {
       resetDotColor(dots[i]);
