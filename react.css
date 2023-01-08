@@ -5,7 +5,7 @@
 .dot {
     width: 100px;
     height: 100px;
-    padding: 10px;
+    margin: 10px;
     background-color: #2d3440;
     border-radius: 50%;
     display: inline-block;
