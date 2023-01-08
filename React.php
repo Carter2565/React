@@ -14,6 +14,6 @@
   </div>
   <button class='Button' id="button">test</button>
 </div>
-<script>loaded()</script>
+<img src='empty.png' onload='loaded()'>
 
 
