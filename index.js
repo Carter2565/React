@@ -110,6 +110,11 @@ function loaded() {
     }, delay * 1000);
   }
   
+  function dot() {
+    dot = document.getElementsByClassName("dot")[dotnum];
+    dot.classList.remove("red");
+  }
+
   function down() {
     dotnum = 0;
     wait = true;
@@ -121,9 +126,9 @@ function loaded() {
     }
     var delay = Math.random() * (2.5 - 1) + 1;
     setTimeout(function() {
+      dotnum = 0;
       for (let x = 0; x < 5; x++) {
-        dot = document.getElementsByClassName("dot")[x];
-        dot.classList.remove("red"); 
+        dot();
       }
       startStopwatch()
       wait = false;
