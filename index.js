@@ -64,6 +64,7 @@ function redSlow() {
 }
 
 function loaded() {
+  let RED = true;
   let interval;
   let elapsedTime = 0;
   let startTime;
@@ -104,7 +105,6 @@ function loaded() {
 
   function down() {
     let dotnum = 0;
-    let RED = true;
     for (let x = 0; x < 3; x++) {
       redFast();
     }
