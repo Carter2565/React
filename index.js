@@ -46,7 +46,7 @@ function loaded() {
   let startTime;
   let isRunning = false;
   let dots = document.querySelectorAll('.dot');
-  let wait = 'false';
+  let wait = fale;
   let delay = 0;
   
   function startStopwatch() {
@@ -95,7 +95,7 @@ function loaded() {
   }
   
   document.getElementById('button').onpointerdown = function() {
-    wait = 'hi'
+    wait = true
     delay = Math.random() * (2.5 - 1.25) + 1.25;
     console.log(wait)
     setTimeout(changeDotColor(0, wait), delay * 1000);
