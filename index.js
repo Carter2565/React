@@ -79,9 +79,9 @@ function loaded() {
     let display = document.getElementById("time");
     let seconds = Math.floor(elapsedTime % 60);
     let minutes = Math.floor(elapsedTime / 60);
-    let hundredths = Math.floor(elapsedTime * 100) % 100;
+    let hundredths = Math.floor(elapsedTime * 1000) % 1000;
     let ms = parts[1]
-    display.innerHTML = `${elapsedTime} -- ${hundredths} Your Time: ${seconds-parts[0]}.${hundredths-ms.substring(0,2)}`;
+    display.innerHTML = `${elapsedTime} -- ${hundredths} Your Time: ${seconds-parts[0]}.${hundredths-ms.substring(0,3)}`;
   }
   
   function changeDotColor() {
