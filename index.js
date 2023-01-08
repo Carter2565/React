@@ -65,7 +65,7 @@ function redSlow() {
 
 function loaded() {
   let wait = true;
-  let dotnum = 0;
+  dotnum = 0;
   const b = document.getElementById("button");
   let timer;
   b.onpointerdown = function() {
