@@ -107,7 +107,7 @@ function loaded() {
   let timer;
   b.onpointerdown = function() {
     let dotnum = 0;
-    let red = true;
+    let RED = true;
     for (let x = 0; x < 3; x++) {
       timer = setTimeout(red, 500);
     }
@@ -119,10 +119,10 @@ function loaded() {
       dot.classList.remove("red"); 
     }
     startStopwatch()
-    let red = false;
+    let RED = false;
   }
   b.onpointerup = function() {
-    if (red) {
+    if (RED) {
       let display = document.getElementById("time");
       display.innerHTML = '--- FAIL';
     }
