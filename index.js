@@ -138,6 +138,7 @@ function loaded() {
   
   document.getElementById('button').onpointerup = function() {
     wait = 0
+    console.log(wait)
     // Reset the color of all dots
     for (let i = 0; i < 5; i++) {
       resetDotColor(dots[i]);
