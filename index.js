@@ -51,8 +51,7 @@ function test() {
     var delay = Math.random() + 0.5;
     // Wait for the specified amount of time
     setTimeout(function() {
-      dot = document.getElementsByClassName("dot")[x];
-      dot.classList.add("red");
+      dotRed()
     }, delay * 1000);
     
   }
