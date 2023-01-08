@@ -17,7 +17,7 @@
   background-color: #242426;
   border-radius: 25px;
   display: inline-block;
-  vertical-align: 50%;
+  text-align-last: center;
 }
 
 .button {
@@ -26,4 +26,5 @@
   background-color: #242426;
   border-radius: 25px;
   display: inline-block;
+  text-align-last: center;
 }
