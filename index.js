@@ -45,7 +45,7 @@ function dotRed() {
   dotnum++
 }
 
-function redFast() {
+function red() {
   // Generate a random number between 0.5 and 1.5
   var delay = Math.random() * (2.5 - 1) + 1;
   // Wait for the specified amount of time
@@ -64,68 +64,28 @@ function redSlow() {
 }
 
 function loaded() {
-  let RED = true;
-  let interval;
-  let elapsedTime = 0;
-  let startTime;
-  let isRunning = false;
-
-  function startStopwatch() {
-    if (!isRunning) {
-      startTime = Date.now();
-      interval = setInterval(updateStopwatch, 10);
-      isRunning = true;
-    }
-  }
-
-  function stopStopwatch() {
-    clearInterval(interval);
-    isRunning = false;
-  }
-
-  function resetStopwatch() {
-    stopStopwatch();
-    elapsedTime = 0;
-    updateStopwatchDisplay();
-  }
-
-  function updateStopwatch() {
-    elapsedTime += (Date.now() - startTime) / 1000;
-    // updateStopwatchDisplay();
-    startTime = Date.now();
-  }
-
-  function updateStopwatchDisplay() {
-    let display = document.getElementById("time");
-    let seconds = Math.floor(elapsedTime % 60);
-    let minutes = Math.floor(elapsedTime / 60);
-    let hundredths = Math.floor(elapsedTime * 100) % 100;
-    display.innerHTML = `${seconds}:${hundredths}`;
-  }
-
-  function down() {
+  let wait = true;
+  let dotnum = 0;
+  const b = document.getElementById("button");
+  let timer;
+  b.onpointerdown = function() {
     let dotnum = 0;
+    let wait = true;
     for (let x = 0; x < 3; x++) {
-      redFast();
+      timer = setTimeout(red, 500);
     }
     for (let x = 0; x < 2; x++) {
-      redSlow();
+      timer = setTimeout(redSlow, 500);
     }
     for (let x = 0; x < 5; x++) {
       dot = document.getElementsByClassName("dot")[x];
       dot.classList.remove("red"); 
     }
-    startStopwatch()
-    RED = false;
-  }
-
-  const b = document.getElementById("button");
-  let timer;
-  b.onpointerdown = function() {
-    timer = setTimeout(down, 500);
+    sotpwatchstart()
+    let wait = false;
   }
   b.onpointerup = function() {
-    if (RED) {
+    if (wait) {
       let display = document.getElementById("time");
       display.innerHTML = '--- FAIL';
     }
