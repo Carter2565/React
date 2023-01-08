@@ -80,7 +80,7 @@ function loaded() {
     let seconds = Math.floor(elapsedTime % 60);
     let minutes = Math.floor(elapsedTime / 60);
     let hundredths = Math.floor(elapsedTime * 100) % 100;
-    display.innerHTML = `${seconds-parts[0]}:${hundredths-parts[1]}`;
+    display.innerHTML = `${seconds-parts[0]}:${hundredths}-- ${parts[1]}`;
   }
   
   function changeDotColor() {
