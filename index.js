@@ -101,16 +101,16 @@ function loaded() {
     setTimeout(function(){changeDotColor(0)}, delay * 1000);
     delay += Math.random() * (2.5 - 1.25) + 1.25;
     console.log(wait)
-    setTimeout(function(){changeDotColor(0)}, delay * 1000);
+    setTimeout(function(){changeDotColor(1)}, delay * 1000);
     delay += Math.random() * (2.5 - 1.25) + 1.25;
     console.log(wait)
-    setTimeout(function(){changeDotColor(0)}, delay * 1000);
+    setTimeout(function(){changeDotColor(2)}, delay * 1000);
     delay += Math.random() * (2.5 - 1.25) + 1.25;
     console.log(wait)
-    setTimeout(function(){changeDotColor(0)}, delay * 1000);
+    setTimeout(function(){changeDotColor(3)}, delay * 1000);
     delay += Math.random() * (2.5 - 1.25) + 1.25;
     console.log(wait)
-    setTimeout(function(){changeDotColor(0)}, delay * 1000);
+    setTimeout(function(){changeDotColor(4)}, delay * 1000);
     startStopwatch();
     wait = false
   };
