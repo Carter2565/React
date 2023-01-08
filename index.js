@@ -38,11 +38,16 @@ function include(file, path="/assets/php/",element="content" ) {
   document.getElementById(element).setAttribute("include-html", location);
   includeHTML();
 }
+
+function test() {
+  window.alert("you held me down for 2 second")
+}
+
 function loaded() {
   const b = document.getElementById("button");
   let timer;
   b.onpointerdown = function() {
-    timer = setTimeout(alert, 2000, "you held me down for 2 second");
+    timer = setTimeout(test, 2000);
   }
   b.onpointerup = function() {
     clearTimeout(timer);
