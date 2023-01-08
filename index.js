@@ -95,7 +95,31 @@ function loaded() {
   }
   
   document.getElementById('button').addEventListener('mousedown', function() {
-    changeDotColor();
+    let delay = Math.random() * (2.5 - 1.25) + 1.25;
+    setTimeout(function() {
+      dots[0].classList.add('red');
+    }, delay * 1000);
+    delay += Math.random() * (2.5 - 1.25) + 1.25;
+    setTimeout(function() {
+      dots[1].classList.add('red');
+    }, delay * 1000);
+    delay += Math.random() * (2.5 - 1.25) + 1.25;
+    setTimeout(function() {
+      dots[2].classList.add('red');
+    }, delay * 1000);
+    delay += Math.random() * (2.5 - 1.25) + 1.25;
+    setTimeout(function() {
+      dots[3].classList.add('red');
+    }, delay * 1000);
+    delay += Math.random() * (2.5 - 1.25) + 1.25;
+    setTimeout(function() {
+      dots[4].classList.add('red');
+    }, delay * 1000);
+    delay += Math.random() * (2.5 - 1.25) + 1.25;
+    // Reset the color of all dots
+    for (let i = 0; i < 5; i++) {
+      resetDotColor(dots[i]);
+    }
     startStopwatch();
     updateStopwatchDisplay();
   });
