@@ -8,7 +8,7 @@
     <div class="dot"></div>
   </div>
   <div class='time'></div>
-  <div class='Buton'></div>
+  <div class='Button'></div>
 </div>
 
 
